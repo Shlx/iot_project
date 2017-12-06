@@ -2,6 +2,9 @@
 
 Projekt für das Wahlfach 'Internet der Dinge' an der HSRM
 
+# Idee
+Grundsätzlich soll im Laufe des Projekts ein smartes Babyphone entstehen, welches neben dem Baby selbst ggf. auch einen Babysitter überwachen kann. Verwendet wird dafür ein Raspberry Pi inklusive einiger Sensoren, die Laute und Bewegungen aufzeichnen sollen. Diese Signale werden nach der Verarbeitung in einer Datenbank zwischengespeichert, um dann mit der zugehörigen Android-App eingesehen werden zu können. Auf dieser App können die Eltern dann jederzeit den Status des Babys einsehen und so außerdem prüfen, ob der Babysitter sich richtig um das Baby kümmert.
+
 # Verwendete Hardware
 Der Hauptbestandteil der verwendeten Hardware ist der Raspberry Pi 2 Model B. Dieser soll die Daten der verschiedenen Sensoren verarbeiten mit der entsprechenden Geschäftslogik auswerten können. 
 
