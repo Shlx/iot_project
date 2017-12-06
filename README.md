@@ -3,7 +3,9 @@
 Projekt für das Wahlfach 'Internet der Dinge' an der HSRM
 
 # Idee
-Grundsätzlich soll im Laufe des Projekts ein smartes Babyphone entstehen, welches neben dem Baby selbst ggf. auch einen Babysitter überwachen kann. Verwendet wird dafür ein Raspberry Pi inklusive einiger Sensoren, die Laute und Bewegungen aufzeichnen sollen. Diese Signale werden nach der Verarbeitung in einer Datenbank zwischengespeichert, um dann mit der zugehörigen Android-App eingesehen werden zu können. Auf dieser App können die Eltern dann jederzeit den Status des Babys einsehen und so außerdem prüfen, ob der Babysitter sich richtig um das Baby kümmert.
+Grundsätzlich soll im Laufe des Projekts ein smartes Babyphone entstehen, welches neben dem Baby selbst ggf. auch einen Babysitter überwachen kann. Verwendet wird dafür ein Raspberry Pi inklusive einiger Sensoren, die Laute und Bewegungen aufzeichnen sollen. Diese Signale werden nach der Verarbeitung in einer Datenbank zwischengespeichert, um dann mit der zugehörigen Android-App eingesehen werden zu können.
+
+Auf dieser App können die Eltern dann jederzeit den Status des Babys einsehen und so außerdem prüfen, ob der Babysitter sich richtig um das Baby kümmert. Des Weiteren können hier Statistiken eingesehen werden, um den Zustand des Babys über einen Zeitraum hinweg zu beobachten.
 
 # Verwendete Hardware
 Der Hauptbestandteil der verwendeten Hardware ist der Raspberry Pi 2 Model B. Dieser soll die Daten der verschiedenen Sensoren verarbeiten mit der entsprechenden Geschäftslogik auswerten können. 
@@ -14,3 +16,8 @@ Der wichtigste Sensor für dieses Projekt ist das USB Mikrofon. Es besitzt eine 
 
 Um zu erfahren, ob sich der Babysitter schnellstmöglich um das Baby kümmert, wird ein weiterer Sensor benötigt. Dabei handelt es sich im einen Bewegungsmelder. In unserem Fall wird der Mini Bewegungssensor HC-SR505 verwendet, dieser besitzt eine Reichweite von drei Metern, hat einen Abtastwinkel von 100 Grad, besitzt eine Einschaltverzögerung und funktioniert mit Infrarot. Dieser Mini Bewegungssensor benötigt eine Platine auf die er aufgesteckt werden kann. Die Platine wurde von Herrn Beckmann für ein anderes Projekt bereits montiert und wird in gleicher Konfiguration in diesem Projekt ebenfalls eingesetzt. Die Platine besitzt einen Drehencoder, einen Schiebeschalter, einen Knopf, die Halterung für den Bewegungsmelder und vier LEDs. 
 
+# Funktionsweise
+
+Mithilfe der eingehenden Daten des Mikrofons und des Bewegungsmelders wird der Status des Babys ermittelt. Das Mikrofon soll hierbei erkennen ob das Baby am Schlafen (Fast keine Geräusche), am Ruhen (Nur leise Geräusche) oder am Schreien (Laute Geräusche) ist. Der Bewegungsmelder erkennt, ob sich der Babysitter über der Babykrippe befindet und sich um das Baby kümmert.
+
+Die augezeichneten Daten werden an den Server gesendet, verarbeitet und in eine Datenbank eingetragen. Nachdem man sich in der Android-App eingeloggt hat, kann man diese Daten auch auf seinem Handy einsehen und weiß so auch unterwegs immer über den Zustand des Babys Bescheid. Die App zeigt hauptsächlich eine Liste der Zustände des Babys an, wo betrachtet werden kann, zu welchen Zeitpunkten der Zustand des Babys (bzw. des Sitters) sich verändert hat.
