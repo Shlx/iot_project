@@ -1,0 +1,127 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:2:1-31:12
+	package
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:3:5-31
+		INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:5:22-64
+application
+ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:7:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Marvin\.android\build-cache\d08870f82621e5a3ad89db28ba1781592eafebf4\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:26.1.0] C:\Users\Marvin\.android\build-cache\d6efb7bea1209d2c47b239764f26a54db82a7fbd\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Marvin\.android\build-cache\b56a80b127fdb23d7ba71799c5d73d69f062569a\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Marvin\.android\build-cache\9a75a469eee5b0a2ea2b9e146b1f821597a90a4f\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Marvin\.android\build-cache\0064fdcf7eb424120360c8fb3bb6ffa5a5f51fb9\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Marvin\.android\build-cache\d73f9c25575fcba4f5d1e34c42bce7dc4e9dd96a\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Marvin\.android\build-cache\854d356e97e261463c04315b6ce63720b994d7ca\output\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Marvin\.android\build-cache\0054726016d72dc492bd3bf4cf4d1e89e016b1db\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Marvin\.android\build-cache\3bf2591aa056d774cb251a7ef198267f6497feae\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Marvin\.android\build-cache\e3f2a9ed81f4d7eb5c2b2dcf61cd491ec35eb812\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Marvin\.android\build-cache\843c7af2c0b79fe9ff071682a38eabddf3b623c7\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.jakewharton.timber:timber:4.6.0] C:\Users\Marvin\.android\build-cache\a344054c10cd1dea593c6dc25a7540380eb5e152\output\AndroidManifest.xml:8:5-20
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Marvin\.android\build-cache\ed450f3ecf138a2443e210518a7163cf81695258\output\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Marvin\.android\build-cache\0884baae97eb7fbb461e740b95452ffbfb0e5b58\output\AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marvin\.android\build-cache\eeb7a9a2401e89cefe4ad5701adfdb02dd0b177f\output\AndroidManifest.xml:24:5-28:19
+	android:label
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:11:9-41
+	android:supportsRtl
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:13:9-35
+	android:roundIcon
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:12:9-54
+	android:allowBackup
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:9:9-35
+	android:icon
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:10:9-43
+	android:theme
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:14:9-40
+	android:name
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:8:9-34
+activity#marvin.babyphone.ui.MainActivity
+ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:15:9-24:20
+	android:label
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:17:13-45
+	android:theme
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:18:13-56
+	android:name
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:16:13-44
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:22:27-74
+activity#marvin.babyphone.ui.SettingsActivity
+ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:26:9-28:54
+	android:label
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:28:13-51
+	android:name
+		ADDED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml:27:13-48
+uses-sdk
+INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Marvin\.android\build-cache\d08870f82621e5a3ad89db28ba1781592eafebf4\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:26.1.0] C:\Users\Marvin\.android\build-cache\d6efb7bea1209d2c47b239764f26a54db82a7fbd\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Marvin\.android\build-cache\b56a80b127fdb23d7ba71799c5d73d69f062569a\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Marvin\.android\build-cache\9a75a469eee5b0a2ea2b9e146b1f821597a90a4f\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Marvin\.android\build-cache\0064fdcf7eb424120360c8fb3bb6ffa5a5f51fb9\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Marvin\.android\build-cache\d73f9c25575fcba4f5d1e34c42bce7dc4e9dd96a\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Marvin\.android\build-cache\854d356e97e261463c04315b6ce63720b994d7ca\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Marvin\.android\build-cache\0054726016d72dc492bd3bf4cf4d1e89e016b1db\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Marvin\.android\build-cache\3bf2591aa056d774cb251a7ef198267f6497feae\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Marvin\.android\build-cache\e3f2a9ed81f4d7eb5c2b2dcf61cd491ec35eb812\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Marvin\.android\build-cache\843c7af2c0b79fe9ff071682a38eabddf3b623c7\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\Marvin\.android\build-cache\eaec41e27821be682df6eca7ffa9878620929130\output\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton.timber:timber:4.6.0] C:\Users\Marvin\.android\build-cache\a344054c10cd1dea593c6dc25a7540380eb5e152\output\AndroidManifest.xml:6:5-43
+MERGED from [android.arch.persistence.room:runtime:1.0.0] C:\Users\Marvin\.android\build-cache\9de60321aa5acafe5f08b60262518c52887ed320\output\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db-framework:1.0.0] C:\Users\Marvin\.android\build-cache\fd273d6b1a6ec9047260491bbdf915fe4f7b0758\output\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.persistence:db:1.0.0] C:\Users\Marvin\.android\build-cache\d8d5fa4f4e115b4c731b176aa52ba47e7b4cf78c\output\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.core:runtime:1.0.0] C:\Users\Marvin\.android\build-cache\375c12fa7a66063fcfb700ca56cb97bd8f1254b6\output\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Marvin\.android\build-cache\ed450f3ecf138a2443e210518a7163cf81695258\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Marvin\.android\build-cache\0884baae97eb7fbb461e740b95452ffbfb0e5b58\output\AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marvin\.android\build-cache\eeb7a9a2401e89cefe4ad5701adfdb02dd0b177f\output\AndroidManifest.xml:20:5-22:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:26.1.0] C:\Users\Marvin\.android\build-cache\d6efb7bea1209d2c47b239764f26a54db82a7fbd\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AndroidStudioProjects\Babyphone\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:26.1.0] C:\Users\Marvin\.android\build-cache\d6efb7bea1209d2c47b239764f26a54db82a7fbd\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Marvin\.android\build-cache\b56a80b127fdb23d7ba71799c5d73d69f062569a\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Marvin\.android\build-cache\9a75a469eee5b0a2ea2b9e146b1f821597a90a4f\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Marvin\.android\build-cache\0064fdcf7eb424120360c8fb3bb6ffa5a5f51fb9\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Marvin\.android\build-cache\d73f9c25575fcba4f5d1e34c42bce7dc4e9dd96a\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Marvin\.android\build-cache\854d356e97e261463c04315b6ce63720b994d7ca\output\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Marvin\.android\build-cache\0054726016d72dc492bd3bf4cf4d1e89e016b1db\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Marvin\.android\build-cache\3bf2591aa056d774cb251a7ef198267f6497feae\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Marvin\.android\build-cache\e3f2a9ed81f4d7eb5c2b2dcf61cd491ec35eb812\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Marvin\.android\build-cache\843c7af2c0b79fe9ff071682a38eabddf3b623c7\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Marvin\.android\build-cache\ed450f3ecf138a2443e210518a7163cf81695258\output\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Marvin\.android\build-cache\0884baae97eb7fbb461e740b95452ffbfb0e5b58\output\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:design:26.1.0] C:\Users\Marvin\.android\build-cache\d6efb7bea1209d2c47b239764f26a54db82a7fbd\output\AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:design:26.1.0] C:\Users\Marvin\.android\build-cache\d6efb7bea1209d2c47b239764f26a54db82a7fbd\output\AndroidManifest.xml:27:13-51
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marvin\.android\build-cache\eeb7a9a2401e89cefe4ad5701adfdb02dd0b177f\output\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marvin\.android\build-cache\eeb7a9a2401e89cefe4ad5701adfdb02dd0b177f\output\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Marvin\.android\build-cache\eeb7a9a2401e89cefe4ad5701adfdb02dd0b177f\output\AndroidManifest.xml:26:13-58

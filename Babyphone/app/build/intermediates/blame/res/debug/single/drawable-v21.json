@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\0884baae97eb7fbb461e740b95452ffbfb0e5b58\\output\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\d6efb7bea1209d2c47b239764f26a54db82a7fbd\\output\\res\\drawable-v21\\avd_show_password.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\d6efb7bea1209d2c47b239764f26a54db82a7fbd\\output\\res\\drawable-v21\\avd_hide_password.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\d6efb7bea1209d2c47b239764f26a54db82a7fbd\\output\\res\\drawable-v21\\design_password_eye.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\d6efb7bea1209d2c47b239764f26a54db82a7fbd\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+    }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\tooltip_exit.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\tooltip_exit.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\d6efb7bea1209d2c47b239764f26a54db82a7fbd\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\d6efb7bea1209d2c47b239764f26a54db82a7fbd\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\d6efb7bea1209d2c47b239764f26a54db82a7fbd\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\d6efb7bea1209d2c47b239764f26a54db82a7fbd\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\tooltip_enter.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\tooltip_enter.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\Marvin\\.android\\build-cache\\b56a80b127fdb23d7ba71799c5d73d69f062569a\\output\\res\\anim\\abc_slide_in_top.xml"
+    }
+]

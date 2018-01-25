@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_settings.png",
+        "source": "D:\\AndroidStudioProjects\\Babyphone\\app\\src\\main\\res\\drawable-mdpi\\ic_settings.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\Babyphone\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_statistics.png",
+        "source": "D:\\AndroidStudioProjects\\Babyphone\\app\\src\\main\\res\\drawable-mdpi\\ic_statistics.png"
+    }
+]

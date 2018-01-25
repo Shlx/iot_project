@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button_switch_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/switch_account" />
+
+    <Button
+        android:id="@+id/button_delete_entries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_entries" />
+
+    <Button
+        android:id="@+id/button_delete_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_account"/>
+
+    <!-- // TODO: REMOVE -->
+    <Button
+        android:id="@+id/delete_everything"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete everything (debug)"
+        android:clickable="true"/>
+
+</LinearLayout>

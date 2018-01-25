@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="standard_padding">16dp</dimen>
+    <dimen name="list_item_height">72dp</dimen>
+</resources>
