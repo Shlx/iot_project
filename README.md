@@ -70,16 +70,16 @@ Die Android-App verwendet Klassen aus dem `javax.crypto`-package, welches sich a
 
 ### Weitere Quellen
 AES  
-[https://de.m.wikipedia.org/wiki/Advanced_Encryption_Standard]
+https://de.m.wikipedia.org/wiki/Advanced_Encryption_Standard
 
 CBC (Cypher Block Chaining)  
-[https://de.m.wikipedia.org/wiki/Cipher_Block_Chaining_Mode]
+https://de.m.wikipedia.org/wiki/Cipher_Block_Chaining_Mode
 
 PyCrypto  
-[https://pypi.python.org/pypi/pycrypto]
+https://pypi.python.org/pypi/pycrypto
 
 javax.crypto  
-[https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html]
+https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html
 
 ## Datenbank
 Die Datenbank besteht aus insgesamt zwei Tabellen:
