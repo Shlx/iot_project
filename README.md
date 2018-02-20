@@ -45,14 +45,11 @@ Um empfangene Einträge zu persistieren, wird eine lokale SQLite-Datenbank verwe
 ### Verwendete Bibliotheken
 Die Android-App verwendet folgenden Bibliotheken:
 
-[ButterKnife](https://github.com/JakeWharton/butterknife)  
-ButterKnife ermöglicht es, Referenzen zu UI-Elementen über Annotationen im Code sehr übersichtlich und ordentlich zu gestalten.
+- [ButterKnife](https://github.com/JakeWharton/butterknife): ButterKnife ermöglicht es, Referenzen zu UI-Elementen über Annotationen im Code sehr übersichtlich und ordentlich zu gestalten.
 
-[Timber](https://github.com/JakeWharton/timber)  
-Timber ist ein simples Logging-Tool, was hier zu Debug-Zwecken verwendet wurde.
+- [Timber](https://github.com/JakeWharton/timber): Timber ist ein simples Logging-Tool, was hier zu Debug-Zwecken verwendet wurde.
 
-[Room](https://developer.android.com/topic/libraries/architecture/room.html)  
-Room bietet eine Abstraktionsschicht über SQLite und vereinfacht Anfragen an die lokale Datenbank.
+- [Room](https://developer.android.com/topic/libraries/architecture/room.html): Room bietet eine Abstraktionsschicht über SQLite und vereinfacht Anfragen an die lokale Datenbank.
 
 ## Sicherheit
 ### Allgemeine Maßnahmen
