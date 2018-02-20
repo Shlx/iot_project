@@ -51,7 +51,7 @@ ButterKnife ermöglicht es, Referenzen zu UI-Elementen über Annotationen im Cod
 [Timber](https://github.com/JakeWharton/timber)  
 Timber ist ein simples Logging-Tool, was hier zu Debug-Zwecken verwendet wurde.
 
-[Room](https://developer.android.com/topic/libraries/architecture/room.html)
+[Room](https://developer.android.com/topic/libraries/architecture/room.html)  
 Room bietet eine Abstraktionsschicht über SQLite und vereinfacht Anfragen an die lokale Datenbank.
 
 ## Sicherheit
