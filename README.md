@@ -1,6 +1,6 @@
 ### iot_project (Babyphone)
 
-Projekt für das Wahlfach 'Internet der Dinge' an der HSRM
+Projekt für das Wahlfach 'Internet der Dinge' an der HSRM. Diese Readme-Datei dient gleichzeitig als Dokumentation bzw. Wiki für das Projekt.
 
 ## Idee
 Grundsätzlich soll im Laufe des Projekts ein smartes Babyphone entstehen, welches neben dem Baby selbst ggf. auch einen Babysitter überwachen kann. Verwendet wird dafür ein Raspberry Pi inklusive einiger Sensoren, die Laute und Bewegungen aufzeichnen sollen. Diese Signale werden nach der Verarbeitung in einer Datenbank zwischengespeichert, um dann mit der zugehörigen Android-App eingesehen werden zu können.
@@ -44,20 +44,20 @@ Der hier verwendete CBC (Cypher Block Chaining) Modus stellt eine weitere Absich
 Die Android-App verwendet Klassen aus dem `javax.crypto`-package, welches sich als Standard für Java-Crypto-APIs durchgesetzt hat. Die App empfängt die verschlüsselten Texte des Servers und entschlüsselt diese mithilfe von Methoden, die von dieser API bereitgestellt werden. Nachdem ein `Cipher`-Objekt mit entsprechenden Parametern initialisiert wurde, kann der Text über dessen Methoden dekodiert werden, um schließlich ein [`BabyEntry`](/Babyphone/app/src/main/java/marvin/babyphone/model/BabyEntry.java)-Objekt aus dem Eintrag zu machen. Diese Funktionalität wird von der Klasse [`AesCrypt`](/Babyphone/app/src/main/java/marvin/babyphone/security/AesCrypt.java) bereitgestellt und im [`ResponseHandler`](/Babyphone/app/src/main/java/marvin/babyphone/ResponseHandler.java) verwendet.
 
 # Weitere Quellen
-AES
+AES  
 https://de.m.wikipedia.org/wiki/Advanced_Encryption_Standard
 
-CBC (Cypher Block Chaining)
+CBC (Cypher Block Chaining)  
 https://de.m.wikipedia.org/wiki/Cipher_Block_Chaining_Mode
 
-PyCrypto
+PyCrypto  
 https://pypi.python.org/pypi/pycrypto
 
-javax.crypto
+javax.crypto  
 https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html
 
 ## Datenbank
-Die Datenbank besteht aus insgesamt zwei Tabellen. 
+Die Datenbank besteht aus insgesamt zwei Tabellen:
 
 # Loginkey
 Diese Tabelle enthält die Monitorid als Fremdschlüssel und den Userkey als Primärschlüssel.  Die Monitorid ist vom Typ varchar und entspricht dem Pi-Namen. Er wird für das Registrieren der Applikation und zum Abrufen der Daten benötigt. Der Userkey ist ebenfalls vom Typ varchar, dieser Key wird bei der Registrierung erstellt und ist MD5 verschlüsselt. Der Key muss in die Applikation eingegeben werden, nur so kann die Applikation auf die Daten des dazugehörigen Pis zugreifen. Die notwendigen Daten liegen in der Log-Tabelle.
