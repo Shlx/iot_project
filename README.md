@@ -1,4 +1,4 @@
-### iot_project (Babyphone)
+# iot_project (Babyphone)
 
 Projekt für das Wahlfach 'Internet der Dinge' an der HSRM. Diese Readme-Datei dient gleichzeitig als Dokumentation bzw. Wiki für das Projekt.
 
@@ -29,39 +29,67 @@ Mit diesem Server soll nicht nur der eigentliche Babysitter-Monitor das Produkt 
 Um die Daten des Babysitter-Monitors und dessen Sensoren zu speichern, wird eine Datenbank benötigt. In diesem Fall wird eine MySQL Datenbank Version 5.5 verwendet, dies ist die aktuellste Version auf dem Server.
 Da auch der Sicherheitsaspekt bei diesem Projekt berücksichtigt werden muss, werden die Daten des Monitors in AES 128 mit dem CBC-Verfahren verschlüsselt.
 
+## Client (Android-App)
+Die Android-App ist dafür zuständig neue Daten vom Server anzufragen und zu empfangen. Empfangene Daten werden dann entschlüsselt und schließlich in einer Liste angezeigt. Für den Endnutzer ist die Einsicht dieser Liste also die Hauptfunktion der App.
+
+### Empfangen der Einträge
+Wenn die App zum ersten Mal geöffnet wird, wird der Nutzer in einem [Dialog](Babyphone/app/src/main/java/marvin/babyphone/ui/LoginDialog.java) dazu aufgefordet, sich mit Nutzernamen und Passwort anzumelden. Falls eine gültige Kombination eingetragen wurde, gilt der User als eingeloggt und kann die Einträge des Babyphones einsehen, welches mit seinem Account verknüpft ist. In der [Hauptansicht](Babyphone/app/src/main/java/marvin/babyphone/ui/MainActivity.java) kann durch "herunterziehen" (Pull-to-refresh) eine neue Anfrage an den Server gesendet werden. Eine solche Anfrage wird außerdem nach einem erfolgreichen Login automatisch versendet.
+
+Anfragen an die Datenbank werden über den [`DatabaseReader`](Babyphone/app/src/main/java/marvin/babyphone/network/DatabaseReader.java) immer asynchron versendet, damit der Hauptthread währenddessen nicht blockiert wird. Eingehende Antworten des Servers werden durch ein kleines Interface (`OnPhpResponse`) an die aktuelle Activity weitergegeben, die die Antwort dann verarbeitet. Im Normalfall werden Antworten so an den [`ResponseHandler`](/Babyphone/app/src/main/java/marvin/babyphone/ResponseHandler.java) weitergegeben, wodurch die Antwort entschlüsselt und zu Java-Objekten umgewandelt wird, welche dem Nutzer dann schließlich mithilfe des [`BabyAdapters`](iot_project/Babyphone/app/src/main/java/marvin/babyphone/BabyAdapter.java) in einer Liste dargestellt werden.
+
+Damit immer nur neue Einträge empfangen bzw. versendet werden, wird bei eingehenden Antworten außerdem der neueste Timestamp gespeichert. Bei folgenden Anfragen werden nur noch Einträge aus der Datenbank angefragt, die nach diesem Zeitpunkt erstellt wurden.
+
+### Weitere Funktionen der App
+Um empfangene Einträge zu persistieren, wird eine lokale SQLite-Datenbank verwendet. Hier werden Einträge inklusive ihrer Timestamps eingetragen, sobald sie entschlüsselt wurden. Des Weiteren existiert eine [zweite Ansicht](Babyphone/app/src/main/java/marvin/babyphone/ui/SettingsActivity.java), in der Nutzer ihre Daten verwalten können. Hier können also wahlweise Daten oder der gesamte Account gelöscht (auch aus der Server-Datenbank) werden. Momentan existiert dort außerdem ein Button, der die App zu Debug-Zwecken komplett resettet.
+
+### Verwendete Bibliotheken
+Die Android-App verwendet folgenden Bibliotheken:
+
+[ButterKnife](https://github.com/JakeWharton/butterknife)  
+ButterKnife ermöglicht es, Referenzen zu UI-Elementen über Annotationen im Code sehr übersichtlich und ordentlich zu gestalten.
+
+[Timber](https://github.com/JakeWharton/timber)  
+Timber ist ein simples Logging-Tool, was hier zu Debug-Zwecken verwendet wurde.
+
+[Room](https://developer.android.com/topic/libraries/architecture/room.html)
+Room bietet eine Abstraktionsschicht über SQLite und vereinfacht Anfragen an die lokale Datenbank.
+
 ## Sicherheit
-# Allgemeine Maßnahmen
+### Allgemeine Maßnahmen
 Die Sicherheitsaspekte für diese Anwendung umfassen unter anderem das sichere Versenden und Speichern der Daten zur späteren Verwendung. Es wurde sich dafür entschieden, möglichst wenige persönliche Daten über das Netz zu übertragen. Aus diesem Grund wurde unter anderem von einer Implementierung abgesehen, die das Aufzeichnen und gegebenenfalls Versenden von Ton- und / oder Bildaufnahmen vorsieht.
 
-# Senden der Sensordaten an den Server
+### Senden der Sensordaten an den Server
 Um die Vertraulichkeit der gesendeten Daten zu gewährleisten, werden diese als verschlüsselter String gesendet. Als Verschlüsselung wird AES 128 nach dem CBC-Verfahren verwendet. Allgemein handelt es sich bei dem DES-Nachfolger AES um eine Blockchiffre, die Texte nach dem Rijndal-Algorithmus verschlüsselt. Es handelt sich dabei um ein symmetrisches Verfahren, was bedeutet, dass zum Ver- und Entschlüsseln der selbe Schlüssel benutzt wird. Allgemein lässt das Rijndal-Verfahren mehrere verschiedene Schlüssellängen zu. Die in diesem Projekt verwendete Implementierung PyCrypto schränkt die möglichen Schlüssellängen auf 128, 192 oder 256 Bit ein. Konkret wurde eine Schlüssellänge von 128 Bit, das entspricht 16 Zeichen, gewählt.
 
 Das AES-Verfahren gilt als sehr sicher und für diese Anwendung bietet eine Schlüssellänge von 128 Bit ausreichend Sicherheit. Das Programm ist jedoch so konzipiert, dass eine andere Art der Verschlüsselung möglichst einfach nachgerüstet werden kann, falls dies zu einem späteren Zeitpunkt notwendig werden sollte. Sowohl das AES-Verfahren an sich, als auch das entsprechende Python-Modul PyCrypto dürfen frei und ohne anfallende Lizenzgebühren verwendet werden. PyCrypto wird in Version 2.6.1 im Projekt verwendet. Außer der bereits erwähnten AES-Verschlüsselung in verschiedenen Varianten bietet es auch weitere Verfahren (zum Beispiel DES und RSA), sowie verschiedene Hash-Funktionen an. Das Modul wird zur Zeit von seinen Entwickeln als „vollständig und fertig“ eingestuft. Vorhandene Teile werden sich also voraussichtlich in Zukunft nicht mehr ändern, sodass die Kompatibilität gewährleistet bleibt. Allerdings wird es noch aktiv gepflegt, was bedeutet, dass im Falle neuer Entwicklungen diese in das Modul integriert werden.
 
 Der hier verwendete CBC (Cypher Block Chaining) Modus stellt eine weitere Absicherung dar. Eine AES Verschlüsselung in ihrer einfachsten Form erlaubt es anhand des verschlüsselten Textes zu erkennen, wie oft ein bestimmtes Zeichen im Klartext vorkommt. Dies wird durch die Verwendung von CBC vermieden. Hierbei sorgt ein zusätzlicher Initialisierungsvektor (IV) dafür, dass nicht in jedem Block ein bestimmtes Klartextzeichen auf immer das selber Zeichen bei der Verschlüsselung abgebildet wird. Dadurch ist es nicht mehr möglich am verschlüsselten Text zu erkennen, wie oft ein Zeichen im Klartext vorkommt. Der IV sollte für jede Verschlüsselung neu gewählt werden und darf zufällig sein. Er muss nicht geheimgehalten werden und kann zusammen mit der Nachricht im Klartext an den Empfänger übertragen werden.
 
-# Empfangen der Daten in der Android-App
-Die Android-App verwendet Klassen aus dem `javax.crypto`-package, welches sich als Standard für Java-Crypto-APIs durchgesetzt hat. Die App empfängt die verschlüsselten Texte des Servers und entschlüsselt diese mithilfe von Methoden, die von dieser API bereitgestellt werden. Nachdem ein `Cipher`-Objekt mit entsprechenden Parametern initialisiert wurde, kann der Text über dessen Methoden dekodiert werden, um schließlich ein [`BabyEntry`](/Babyphone/app/src/main/java/marvin/babyphone/model/BabyEntry.java)-Objekt aus dem Eintrag zu machen. Diese Funktionalität wird von der Klasse [`AesCrypt`](/Babyphone/app/src/main/java/marvin/babyphone/security/AesCrypt.java) bereitgestellt und im [`ResponseHandler`](/Babyphone/app/src/main/java/marvin/babyphone/ResponseHandler.java) verwendet.
+### Empfangen der Daten in der Android-App
+Die Android-App verwendet Klassen aus dem `javax.crypto`-package, welches sich als Standard für Java-Crypto-APIs durchgesetzt hat. Die App empfängt die verschlüsselten Texte des Servers und entschlüsselt diese mithilfe von Methoden, die von dieser API bereitgestellt werden. Nachdem ein `Cipher`-Objekt mit entsprechenden Parametern initialisiert wurde, kann der Text über dessen Methoden dekodiert werden, um schließlich [`BabyEntry`](/Babyphone/app/src/main/java/marvin/babyphone/model/BabyEntry.java)-Objekte aus den Einträgen zu machen. Diese Funktionalität wird von der Klasse [`AesCrypt`](/Babyphone/app/src/main/java/marvin/babyphone/security/AesCrypt.java) bereitgestellt und im [`ResponseHandler`](/Babyphone/app/src/main/java/marvin/babyphone/ResponseHandler.java) verwendet.
 
-# Weitere Quellen
+### Weitere Quellen
 AES  
-https://de.m.wikipedia.org/wiki/Advanced_Encryption_Standard
+[https://de.m.wikipedia.org/wiki/Advanced_Encryption_Standard]
 
 CBC (Cypher Block Chaining)  
-https://de.m.wikipedia.org/wiki/Cipher_Block_Chaining_Mode
+[https://de.m.wikipedia.org/wiki/Cipher_Block_Chaining_Mode]
 
 PyCrypto  
-https://pypi.python.org/pypi/pycrypto
+[https://pypi.python.org/pypi/pycrypto]
 
 javax.crypto  
-https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html
+[https://docs.oracle.com/javase/7/docs/api/javax/crypto/package-summary.html]
 
 ## Datenbank
 Die Datenbank besteht aus insgesamt zwei Tabellen:
 
-# Loginkey
+### Loginkey
 Diese Tabelle enthält die Monitorid als Fremdschlüssel und den Userkey als Primärschlüssel.  Die Monitorid ist vom Typ varchar und entspricht dem Pi-Namen. Er wird für das Registrieren der Applikation und zum Abrufen der Daten benötigt. Der Userkey ist ebenfalls vom Typ varchar, dieser Key wird bei der Registrierung erstellt und ist MD5 verschlüsselt. Der Key muss in die Applikation eingegeben werden, nur so kann die Applikation auf die Daten des dazugehörigen Pis zugreifen. Die notwendigen Daten liegen in der Log-Tabelle.
 
-# Log
+### Log
 Diese Tabelle enthält die ID als Primärschlüssel, User als Fremdschlüssel, sowie die Spalten Date und Data. Die ID ist vom Typ bigint und wird per Auto-Increment in der Datenbank erzeugt. Die Spalte User ist vom Typ varchar und ist identisch mit der Monitorid in der Loginkey-Tabelle. Über diesen Fremdschlüssel wird eine Verbindung zwischen den beiden Tabellen hergestellt. Die Spalte Date ist vom Typ bigint, hier wird das Datum vom Eintragungszeitpunkt in die Datenbank gespeichert. Gespeichert wird das Datum als Unix Timestamp. Die Spalte Data ist vom Typ varchar und enthält einen AES 128 CBC verschlüsselten String. Dieser String enthält alle Daten, die vom PI über die jeweiligen Sensoren erfasst werden.
+
+## Weitere Informationen
+Weitere Informationen lassen sich aus den beiden Präsentationen (\[[1](TODO LINK 1)\], \[[2](TODO LINK 2)\]) entnehmen.
 
