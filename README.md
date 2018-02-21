@@ -88,5 +88,5 @@ Diese Tabelle enthält die Monitorid als Fremdschlüssel und den Userkey als Pri
 Diese Tabelle enthält die ID als Primärschlüssel, User als Fremdschlüssel, sowie die Spalten Date und Data. Die ID ist vom Typ bigint und wird per Auto-Increment in der Datenbank erzeugt. Die Spalte User ist vom Typ varchar und ist identisch mit der Monitorid in der Loginkey-Tabelle. Über diesen Fremdschlüssel wird eine Verbindung zwischen den beiden Tabellen hergestellt. Die Spalte Date ist vom Typ bigint, hier wird das Datum vom Eintragungszeitpunkt in die Datenbank gespeichert. Gespeichert wird das Datum als Unix Timestamp. Die Spalte Data ist vom Typ varchar und enthält einen AES 128 CBC verschlüsselten String. Dieser String enthält alle Daten, die vom PI über die jeweiligen Sensoren erfasst werden.
 
 ## Weitere Informationen
-Weitere Informationen lassen sich aus den beiden Präsentationen (\[[1](TODO LINK 1)\], \[[2](TODO LINK 2)\]) entnehmen.
+Weitere Informationen lassen sich aus den beiden Präsentationen, Screenshots oder Kommentaren im Code entnehmen.
 
