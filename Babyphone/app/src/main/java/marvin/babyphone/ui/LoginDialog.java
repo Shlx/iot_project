@@ -21,7 +21,16 @@ import marvin.babyphone.network.DatabaseReader;
 import marvin.babyphone.network.Urls;
 import timber.log.Timber;
 
+/**
+ * Login dialog that requests the user to enter their username and password
+ *
+ * @author Marvin Suhr
+ */
 class LoginDialog extends Dialog implements android.view.View.OnClickListener, DatabaseReader.OnPhpResponse {
+
+    /////////////////
+    // UI ELEMENTS //
+    /////////////////
 
     @BindView(R.id.text_login) TextView mTextViewLogin;
     @BindView(R.id.edit_text_username) EditText mEditTextUsername;
@@ -31,8 +40,12 @@ class LoginDialog extends Dialog implements android.view.View.OnClickListener, D
     @BindView(R.id.text_login_error) TextView mTextViewError;
     @BindView(R.id.progress_request) ProgressBar mProgressRequest;
 
-    private boolean mRequestInProgress;
+    /**
+     * Whether or not the dialog was opened by pressing the 'switch account' button.
+     * In other words, when this is set to 'false', the user is not logged in yet.
+     */
     private boolean mSwitchAccount;
+    private boolean mRequestInProgress;
 
     LoginDialog(Context context, boolean switchAccount) {
         super(context);
@@ -44,6 +57,10 @@ class LoginDialog extends Dialog implements android.view.View.OnClickListener, D
         mSwitchAccount = switchAccount;
         mRequestInProgress = false;
     }
+
+    ///////////////////////
+    // ANDROID LIFECYCLE //
+    ///////////////////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +78,10 @@ class LoginDialog extends Dialog implements android.view.View.OnClickListener, D
         }
 
     }
+
+    ////////////////////////
+    // OVERRIDDEN METHODS //
+    ////////////////////////
 
     @Override
     public void onClick(View view) {
@@ -89,36 +110,50 @@ class LoginDialog extends Dialog implements android.view.View.OnClickListener, D
 
     @Override
     public void onResponse(String response) {
+
+        // Make the dialog cancellable again
         setCancelable(mSwitchAccount);
         setCanceledOnTouchOutside(mSwitchAccount);
         mRequestInProgress = false;
         mProgressRequest.setVisibility(View.GONE);
 
+        // If the username / password combination was valid
         if (!Babyphone.KEY_ERROR.equals(response)) {
-            Timber.i("Username / password combination was valid");
 
-            // Clear local database if the account was switched
-            if (mSwitchAccount) {
+            String username = mEditTextUsername.getText().toString();
+            String password = mEditTextPassword.getText().toString();
+            String oldUsername = SharedPrefs.getUsername(getContext());
+
+            // Check if the user logged in with a different account
+            if (!username.equals(oldUsername)) {
+
+                Timber.i("User successfully logged in with a new account");
+
+                // Clear local database
                 BabyDatabase.getInstance(getContext()).deleteAll();
+
+                // Save user to shared preferences
+                SharedPrefs.setUsername(getContext(), username);
+                SharedPrefs.setPassword(getContext(), password);
+                SharedPrefs.setLastUpdate(getContext(), 0);
+
+            } else {
+                Timber.i("User logged in with the same account");
             }
 
-            // User was valid. Save to shared preferences and dismiss dialog
-            SharedPrefs.setUsername(getContext(), mEditTextUsername.getText().toString());
-            SharedPrefs.setPassword(getContext(), mEditTextPassword.getText().toString());
-            SharedPrefs.setLastUpdate(getContext(), 0);
             dismiss();
 
         } else {
             Timber.i("Username / password combination was not valid");
-
-            // Show error message
             setError(R.string.error_invalid_user);
         }
     }
 
     @Override
     public void onError(Exception e) {
-        this.mRequestInProgress = false;
+        setCancelable(mSwitchAccount);
+        setCanceledOnTouchOutside(mSwitchAccount);
+        mRequestInProgress = false;
         mProgressRequest.setVisibility(View.GONE);
 
         setError(R.string.error_database);
@@ -138,19 +173,25 @@ class LoginDialog extends Dialog implements android.view.View.OnClickListener, D
 
         // Check with the server if the user exists
         } else {
+            // Make the dialog uncancellable while the request is in progress
             setCancelable(false);
             setCanceledOnTouchOutside(false);
             mProgressRequest.setVisibility(View.VISIBLE);
             mRequestInProgress = true;
 
             clearError();
+
+            // Start the request
             String url = Urls.DB_CHECK_ACCOUNT(username, password);
             new DatabaseReader(this).execute(url);
         }
     }
 
+    /**
+     * Open a WebView with the register page.
+     */
     private void onClickRegister() {
-        // TODO
+        // TODO: Implement this.
     }
 
     /**

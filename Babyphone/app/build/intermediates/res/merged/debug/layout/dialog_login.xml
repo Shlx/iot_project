@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:padding="@dimen/standard_padding">
 
     <TextView
         android:id="@+id/text_login"
@@ -10,7 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:text="@string/please_login"/>
+        android:text="@string/please_login"
+        android:textSize="@dimen/standard_text_size" />
 
     <EditText
         android:id="@+id/edit_text_username"
@@ -53,7 +55,7 @@
         android:layout_margin="10dp"
         android:visibility="gone"
         android:layout_centerHorizontal="true"
-        android:text="" />
+        android:textSize="@dimen/standard_text_size" />
 
     <ProgressBar
         android:id="@+id/progress_request"

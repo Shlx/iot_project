@@ -3267,14 +3267,15 @@ containing a value of this type.
         public static final int notification_top_pad=0x7f080092;
         public static final int notification_top_pad_large_text=0x7f080093;
         public static final int standard_padding=0x7f080094;
-        public static final int tooltip_corner_radius=0x7f080095;
-        public static final int tooltip_horizontal_padding=0x7f080096;
-        public static final int tooltip_margin=0x7f080097;
-        public static final int tooltip_precise_anchor_extra_offset=0x7f080098;
-        public static final int tooltip_precise_anchor_threshold=0x7f080099;
-        public static final int tooltip_vertical_padding=0x7f08009a;
-        public static final int tooltip_y_offset_non_touch=0x7f08009b;
-        public static final int tooltip_y_offset_touch=0x7f08009c;
+        public static final int standard_text_size=0x7f080095;
+        public static final int tooltip_corner_radius=0x7f080096;
+        public static final int tooltip_horizontal_padding=0x7f080097;
+        public static final int tooltip_margin=0x7f080098;
+        public static final int tooltip_precise_anchor_extra_offset=0x7f080099;
+        public static final int tooltip_precise_anchor_threshold=0x7f08009a;
+        public static final int tooltip_vertical_padding=0x7f08009b;
+        public static final int tooltip_y_offset_non_touch=0x7f08009c;
+        public static final int tooltip_y_offset_touch=0x7f08009d;
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_mtrl_alpha=0x7f020000;
@@ -3748,8 +3749,9 @@ containing a value of this type.
         public static final int switch_account=0x7f07003f;
         public static final int title_settings=0x7f070040;
         public static final int title_statistics=0x7f070041;
-        public static final int url_register=0x7f070042;
-        public static final int username=0x7f070043;
+        public static final int toast_no_new_entries=0x7f070042;
+        public static final int url_register=0x7f070043;
+        public static final int username=0x7f070044;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0900ab;

@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 /**
  * Class for accessing and modifying shared preferences. This is used to save
  * some values and settings.
+ *
+ * @author Marvin Suhr
  */
 public class SharedPrefs {
 
@@ -15,7 +17,6 @@ public class SharedPrefs {
     private static final String PREF_PASSWORD       = "PREF_PASSWORD";
     private static final String PREF_LAST_UPDATE    = "PREF_LAST_UPDATE";
 
-
     private SharedPrefs() {}
 
     private static SharedPreferences getSharedPreferences(Context context) {
@@ -23,7 +24,7 @@ public class SharedPrefs {
     }
 
     public static String getUsername(Context context) {
-        return getSharedPreferences(context).getString(PREF_USERNAME, null);
+        return getSharedPreferences(context).getString(PREF_USERNAME, "");
     }
 
     public static void setUsername(Context context, String value) {
@@ -33,7 +34,7 @@ public class SharedPrefs {
     }
 
     public static String getPassword(Context context) {
-        return getSharedPreferences(context).getString(PREF_PASSWORD, null);
+        return getSharedPreferences(context).getString(PREF_PASSWORD, "");
     }
 
     public static void setPassword(Context context, String value) {

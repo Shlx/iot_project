@@ -1,30 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="armeabi-v7a,armeabi"
-    api-level="24"
+    abi="x86"
+    api-level="25"
     build-mode="FULL"
-    density="xxhdpi"
+    density="420dpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1516837676695"
+    timestamp="1519256587940"
     token="-7788485257685668117"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="8006" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1928" />
+        duration="2650" />
     <task
         name="verifier"
-        duration="0" />
+        duration="250" />
 
     <artifact
+        location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
         location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
         location="D:\AndroidStudioProjects\Babyphone\app\build\outputs\apk\app-debug.apk"
@@ -36,12 +48,6 @@
         location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
         type="SPLIT" />
     <artifact
-        location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
         location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
     <artifact
@@ -51,21 +57,27 @@
         location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
-        location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
         location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1516837676695"
+        timestamp="1519256587940"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
+            location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
             location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
             location="D:\AndroidStudioProjects\Babyphone\app\build\outputs\apk\app-debug.apk"
@@ -77,12 +89,6 @@
             location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
             location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
@@ -90,12 +96,6 @@
             type="SPLIT" />
         <artifact
             location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="D:\AndroidStudioProjects\Babyphone\app\build\intermediates\split-apk\debug\dep\dependencies.apk"

@@ -11,14 +11,15 @@ import marvin.babyphone.model.BabyEntry;
 import timber.log.Timber;
 
 /**
+ * Singleton class that handles access to the local database.
  *
+ * @author Marvin Suhr
  */
 @Database(entities = {BabyEntry.class}, version = 1, exportSchema = false)
 public abstract class BabyDatabase extends RoomDatabase {
 
     private static BabyDatabase sInstance;
-
-    public static final String DATABASE_NAME = "babyphone_db";
+    private static final String DATABASE_NAME = "babyphone_db";
 
     public abstract BabyDao babyDao();
 
@@ -31,20 +32,32 @@ public abstract class BabyDatabase extends RoomDatabase {
         return sInstance;
     }
 
+    //////////////////////
+    // DATABASE METHODS //
+    //////////////////////
+
+    /**
+     * Get all BabyEntries.
+     *
+     * @return A list containing every BabyEntry in the local database.
+     */
     public List<BabyEntry> getAll() {
         List<BabyEntry> entries = babyDao().getAll();
 
-        // TODO: REVERSE ORDER!
-
         if (entries.size() > 0) {
-            Timber.i("Loading " + entries.size() + " entries");
+            Timber.i("Loading " + entries.size() + " entries from the local database");
         } else {
-            Timber.i("No entries found, database seems to be empty");
+            Timber.i("No entries found, local database seems to be empty");
         }
 
         return entries;
     }
 
+    /**
+     * Add multiple BabyEntries to the local database.
+     *
+     * @param entries A list of BabyEntries to be added to the database.
+     */
     public void addAll(List<BabyEntry> entries) {
         Timber.i("Adding " + entries.size() + " entries to the local database");
         for (BabyEntry entry : entries) {
@@ -52,6 +65,9 @@ public abstract class BabyDatabase extends RoomDatabase {
         }
     }
 
+    /**
+     * Delete all BabyEntries from the local database.
+     */
     public void deleteAll() {
         Timber.i("Deleting all entries from the local database");
         babyDao().deleteAll();

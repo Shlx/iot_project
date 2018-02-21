@@ -5,7 +5,6 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-import marvin.babyphone.db.BabyDatabase;
 import marvin.babyphone.model.BabyEntry;
 import marvin.babyphone.security.AesCrypt;
 import marvin.babyphone.util.DateFormatter;
@@ -14,6 +13,8 @@ import timber.log.Timber;
 /**
  * This class handles incoming responses and converts them to regular java
  * objects.
+ *
+ * @author Marvin Suhr
  */
 public class ResponseHandler {
 
@@ -24,13 +25,14 @@ public class ResponseHandler {
     }
 
     /**
-     * Split the response String at any '#' characters. This will split the
-     * response into single entries from the database. Return a list of objects
-     * after converting each entry.
+     * Convert the response into a list of BabyState objects.
      *
      * @param response Response from the .php script.
+     * @return A List consisting of all the entries contained in the response.
      */
     public List<BabyEntry> handleResponse(String response) {
+        // Split the response String at any '#' characters
+        // since that character is used to divide entries.
         String[] entries = response.split("#");
         List<BabyEntry> entriesList = new ArrayList<>();
 
@@ -48,14 +50,14 @@ public class ResponseHandler {
      * @param entry A single entry that represents a BabyState object.
      */
     private BabyEntry convert(String entry) {
+        // Split again at any ';' characters since that
+        // character is used to divide the values of an entry.
         String[] values = entry.split(";");
 
         // Get the timestamp, save the timestamp of the newest entry
-        long timestamp = Long.parseLong(values[0]) * 1000;
-
+        long timestamp = Long.parseLong(values[0]);
         long lastUpdate = SharedPrefs.getLastUpdate(context);
         if (timestamp > lastUpdate) {
-            // TODO: Last update = angefragter timestamp
             SharedPrefs.setLastUpdate(context, timestamp);
         }
 
@@ -74,15 +76,17 @@ public class ResponseHandler {
         String date = new DateFormatter(context).getDateString(timestamp);
         Timber.i("Date: " + date + " Decoded: " + state);
 
-        // Get the values and build the object
-        String[] x = state.split(";");
-        String y = x[0].split("\\.")[0];
-        long dataTimestamp = Long.parseLong(y) * 1000;
-        int volume = Integer.parseInt(x[1]);
-        int movement = Integer.parseInt(x[2]);
+        // Yet again, split at any ';' characters to get the values.
+        String[] entryValues = state.split(";");
+
+        // This is disgusting, but the only way to parse
+        // the timestamps since they come as decimal numbers.
+        String entryTimestamp = entryValues[0].split("\\.")[0];
+        long dataTimestamp = Long.parseLong(entryTimestamp);
+        int volume = Integer.parseInt(entryValues[1]);
+        int movement = Integer.parseInt(entryValues[2]);
 
         return new BabyEntry(dataTimestamp, volume, movement);
-
     }
 
 }

@@ -11,10 +11,14 @@ import timber.log.Timber;
 
 /**
  * Class to access .php scripts on the server asynchronously.
+ *
+ * @author Marvin Suhr
  */
 public class DatabaseReader extends AsyncTask<String, Void, String> {
 
-    // TODO: Rename
+    /**
+     * This interface allows the calling class to handle the response.
+     */
     public interface OnPhpResponse {
         void onResponse(String response);
         void onError(Exception e);
@@ -27,7 +31,18 @@ public class DatabaseReader extends AsyncTask<String, Void, String> {
         this.onPhpResponse = onPhpResponse;
     }
 
+    /**
+     * Send a request to the server and read the response.
+     *
+     * @param urls The URL to be requested.
+     * @return The server's response to the request.
+     */
     protected String doInBackground(String... urls) {
+
+        if (urls.length != 1) {
+            throw new IllegalArgumentException("Please request single URLs only.");
+        }
+
         mException = null;
         String response = "";
 
@@ -54,6 +69,11 @@ public class DatabaseReader extends AsyncTask<String, Void, String> {
         return response;
     }
 
+    /**
+     * Use the interface to let the calling class handle the response or error.
+     *
+     * @param response The response returned by the server.
+     */
     protected void onPostExecute(String response) {
         if (mException == null) {
             // Handle response
@@ -63,4 +83,5 @@ public class DatabaseReader extends AsyncTask<String, Void, String> {
             onPhpResponse.onError(mException);
         }
     }
+
 }

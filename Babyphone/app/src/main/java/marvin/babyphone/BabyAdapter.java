@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import marvin.babyphone.model.BabyEntry;
@@ -16,7 +15,9 @@ import marvin.babyphone.util.DateFormatter;
 import timber.log.Timber;
 
 /**
- * Adapter for creating list items from BabyEntry objects
+ * Adapter for creating list items from BabyEntry objects.
+ *
+ * @author Marvin Suhr
  */
 public class BabyAdapter extends RecyclerView.Adapter<BabyAdapter.ViewHolder> {
 
@@ -27,8 +28,6 @@ public class BabyAdapter extends RecyclerView.Adapter<BabyAdapter.ViewHolder> {
     static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView mDate, mTime, mBabyState, mSitterState;
-        //@BindView(R.id.tv_state) TextView mState;
-        //@BindView(R.id.tv_time) TextView mTime;
 
         ViewHolder(View v) {
             super(v);
@@ -59,11 +58,14 @@ public class BabyAdapter extends RecyclerView.Adapter<BabyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(BabyAdapter.ViewHolder holder, int position) {
         BabyEntry entry = mData.get(position);
-        String date = new DateFormatter(mContext).getDateOnly(entry.getTimeStamp());
+
+        // Get necessary strings
         String time = new DateFormatter(mContext).getTimeOnly(entry.getTimeStamp());
+        String date = new DateFormatter(mContext).getDateOnly(entry.getTimeStamp());
         String babyState = getStringForBabyState(entry.getBabyState());
         String sitterState = getStringForSitterState(entry.getSitterState());
 
+        // Set the strings
         holder.mDate.setText(time);
         holder.mTime.setText(date);
         holder.mBabyState.setText(babyState);
@@ -82,15 +84,24 @@ public class BabyAdapter extends RecyclerView.Adapter<BabyAdapter.ViewHolder> {
      */
     public void addData(List<BabyEntry> entries) {
         Timber.i("Adding " + entries.size() + " entries to the RecyclerView");
-        mData.addAll(entries);
+        mData.addAll(0, entries);
         notifyDataSetChanged();
     }
 
+    /**
+     * Clear the dataset.
+     */
     public void deleteData() {
         mData = new ArrayList<>();
         notifyDataSetChanged();
     }
 
+    /**
+     * Get a string representation for a BabyState.
+     *
+     * @param state The BabyState to be displayed.
+     * @return A string describing the BabyState.
+     */
     private String getStringForBabyState(BabyEntry.BabyState state) {
         switch(state) {
             case CALM:
@@ -103,10 +114,16 @@ public class BabyAdapter extends RecyclerView.Adapter<BabyAdapter.ViewHolder> {
                 return mContext.getString(R.string.baby_crying);
 
             default:
-                return null;
+                return "";
         }
     }
 
+    /**
+     * Get a string representation for a SitterState.
+     *
+     * @param state The SitterState to be displayed.
+     * @return A string describing the SitterState.
+     */
     private String getStringForSitterState(BabyEntry.SitterState state) {
         switch(state) {
             case PRESENT:
@@ -116,7 +133,7 @@ public class BabyAdapter extends RecyclerView.Adapter<BabyAdapter.ViewHolder> {
                 return mContext.getString(R.string.sitter_not_present);
 
             default:
-                return null;
+                return "";
         }
     }
 

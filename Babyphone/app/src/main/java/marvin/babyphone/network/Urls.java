@@ -2,6 +2,12 @@ package marvin.babyphone.network;
 
 import java.util.Locale;
 
+/**
+ * This class stores the URLs needed for requesting entries from the database.
+ * Additionally, there are static methods to easily add parameters to the URLs.
+ *
+ * @author Marvin Suhr
+ */
 public class Urls {
 
     private static final String DB_READ             = "https://tutoring-team.de/IOT/db.php?user=%1$s&pass=%2$s&amount=%3$d&mode=r2";

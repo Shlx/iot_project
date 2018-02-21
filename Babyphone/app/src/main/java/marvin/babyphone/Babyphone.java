@@ -1,17 +1,15 @@
 package marvin.babyphone;
 
 import android.app.Application;
-import android.content.Context;
-
-import java.util.List;
 
 import marvin.babyphone.db.BabyDatabase;
-import marvin.babyphone.model.BabyEntry;
 import marvin.babyphone.util.DateFormatter;
 import timber.log.Timber;
 
 /**
- * Application main class. Used to initialize TODO
+ * Application main class.
+ *
+ * @author Marvin Suhr
  */
 public class Babyphone extends Application {
 
@@ -27,17 +25,16 @@ public class Babyphone extends Application {
         // Initiate logger
         Timber.plant(new Timber.DebugTree());
 
+        int numEntries = BabyDatabase.getInstance(this).getAll().size();
         String username = SharedPrefs.getUsername(this);
         String password = SharedPrefs.getPassword(this);
         long timestamp = SharedPrefs.getLastUpdate(this);
         String lastUpdate = new DateFormatter(this).getDateString(timestamp);
-        int numEntries = BabyDatabase.getInstance(this).getAll().size();
 
         Timber.i("Starting application. " + numEntries + " entries in database."
                 + "\nUsername: " + username
                 + "\nPassword: " + password
                 + "\nlastUpdate: " + timestamp + " (" + lastUpdate + ")");
-
     }
 
 }

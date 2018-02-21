@@ -73,7 +73,7 @@ public class BabyDao_Impl implements BabyDao {
 
   @Override
   public List<BabyEntry> getAll() {
-    final String _sql = "SELECT * FROM baby_entries";
+    final String _sql = "SELECT * FROM baby_entries ORDER BY timeStamp DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final Cursor _cursor = __db.query(_statement);
     try {

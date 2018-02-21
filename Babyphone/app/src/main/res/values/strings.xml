@@ -1,4 +1,5 @@
 <resources>
+    <!-- TODO: German translation -->
     <string name="app_name">Babyphone</string>
     <string name="title_settings">Settings</string>
     <string name="title_statistics">Statistics</string>
@@ -8,14 +9,17 @@
 
     <string name="request_in_progress">Another request is in progress already</string>
 
+    <!-- Toasts -->
+    <string name="toast_no_new_entries">There are no new entries</string>
+
     <!-- Baby states -->
-    <string name="baby_calm">Baby: calm</string>
-    <string name="baby_noisy">Baby: noisy</string>
-    <string name="baby_crying">Baby: crying</string>
+    <string name="baby_calm">Baby: Calm</string>
+    <string name="baby_noisy">Baby: Noisy</string>
+    <string name="baby_crying">Baby: Crying</string>
 
     <!-- Sitter states -->
-    <string name="sitter_present">Sitter: present</string>
-    <string name="sitter_not_present">Sitter: not present</string>
+    <string name="sitter_present">Sitter: Present</string>
+    <string name="sitter_not_present">Sitter: Not present</string>
 
     <!-- Login dialog -->
     <string name="please_login">Please login first</string>

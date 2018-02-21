@@ -14,30 +14,34 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_date" />
+            android:id="@+id/text_date"
+            android:textSize="@dimen/standard_text_size" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_time" />
+            android:id="@+id/text_time"
+            android:textSize="@dimen/standard_text_size" />
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="match_parent"
-        android:layout_weight="0">
+        android:layout_weight="0" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_baby_state" />
+            android:id="@+id/text_baby_state"
+            android:textSize="@dimen/standard_text_size" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_sitter_state" />
+            android:id="@+id/text_sitter_state"
+            android:textSize="@dimen/standard_text_size" />
 
     </LinearLayout>
 
